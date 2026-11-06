@@ -29,8 +29,8 @@ export default function AdminPage() {
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
           
           {/* Header Tab Responsive */}
-          <div className="overflow-x-auto pb-1">
-            <TabsList className="w-full justify-start h-auto p-1 bg-slate-100/50 border">
+          <div className="w-full pb-1">
+            <TabsList className="w-full justify-start h-auto p-1.5 bg-slate-100/70 border flex flex-wrap gap-1.5 rounded-xl">
                 <TabsTrigger value="content" className="data-[state=active]:bg-white data-[state=active]:shadow-sm py-2 px-4 gap-2">
                     <Newspaper className="w-4 h-4 text-blue-600"/>
                     <span>Berita & Kegiatan</span>
