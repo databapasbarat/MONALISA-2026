@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Users, Shield, Key, FileSpreadsheet, Settings, Newspaper, Database } from 'lucide-react';
+import { Users, Shield, Key, FileSpreadsheet, Settings, Newspaper, Database, MessageSquare } from 'lucide-react';
 
 // Import Layout
 import { TestPageLayout } from '@/components/TestPageLayout';
@@ -12,6 +12,7 @@ import { EmployeeManagement } from '@/components/admin/EmployeeManagement';
 import { UserManagement } from '@/components/admin/UserManagement';
 import { RoleManagement } from '@/components/admin/RoleManagement';
 import { PermissionManagement } from '@/components/admin/PermissionManagement';
+import { WhatsAppManager } from '@/components/admin/WhatsAppManager';
 
 export default function AdminPage() {
   const [activeTab, setActiveTab] = useState('content');
@@ -55,6 +56,10 @@ export default function AdminPage() {
                     <Key className="w-4 h-4 text-slate-600"/>
                     <span>Permissions</span>
                 </TabsTrigger>
+                <TabsTrigger value="whatsapp" className="data-[state=active]:bg-white data-[state=active]:shadow-sm py-2 px-4 gap-2">
+                    <MessageSquare className="w-4 h-4 text-emerald-600"/>
+                    <span>WhatsApp (Fonnte)</span>
+                </TabsTrigger>
             </TabsList>
           </div>
 
@@ -81,6 +86,10 @@ export default function AdminPage() {
 
           <TabsContent value="permissions" className="focus-visible:outline-none mt-0">
             <PermissionManagement />
+          </TabsContent>
+
+          <TabsContent value="whatsapp" className="focus-visible:outline-none mt-0">
+            <WhatsAppManager />
           </TabsContent>
 
         </Tabs>
